@@ -9,10 +9,16 @@
     let r;
     onMount(() => {
         r = document.querySelector(':root');
+        if(localStorage.getItem("themeID") != null) {
+            themeID = parseInt(localStorage.getItem("themeID"));
+        } else {
+            themeID = 0;
+        }
+        updateStyle();
     });
     const updateStyle = () => {
         r.style.setProperty('--theme', themes[themeID]);
-        console.log(themeID);
+        localStorage.setItem("themeID", String(themeID));
         switch (themeID) {
             case 0:
                 div.style.backgroundImage = "url(/BgImage1.jpg)";
@@ -27,8 +33,8 @@
                 p.innerText = "Mein Daumen";
                 break;
             case 3:
-                div.style.backgroundImage = "url(/BgImage3.jpg)";
-                p.innerText = "Mein Daumen";
+                div.style.backgroundImage = "url(/BgImage4.jpg)";
+                p.innerText = "Picture from Internet";
                 break;
         }
     }

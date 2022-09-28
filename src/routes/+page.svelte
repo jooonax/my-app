@@ -17,7 +17,6 @@
     
 
     let number = 0;
-    $: console.log(number);
     let navbar = ["","",""];
 
 </script>
