@@ -4,7 +4,7 @@
     export let p;
     export let navIndex = 0;
     let themeID = 0;
-    let themes = ["#04AA6D", "#33b5e5", "#ff4444"];
+    let themes = ["#04AA6D", "#33b5e5", "#ff4444", "#ff9244"];
 
     let r;
     onMount(() => {
@@ -23,6 +23,10 @@
                 p.innerText = "Kitzbühl Panoramaalm";
                 break;
             case 2:
+                div.style.backgroundImage = "url(/BgImage3.jpg)";
+                p.innerText = "Mein Daumen";
+                break;
+            case 3:
                 div.style.backgroundImage = "url(/BgImage3.jpg)";
                 p.innerText = "Mein Daumen";
                 break;
