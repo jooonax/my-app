@@ -1,43 +1,15 @@
 <script lang="ts">
     import { onMount } from 'svelte';
-    export let div;
-    export let p;
-    export let navIndex = 0;
-    let themeID = 0;
-    let themes = ["#04AA6D", "#33b5e5", "#ff4444", "#ff9244"];
+    import { createEventDispatcher } from 'svelte'
+    const dispatch = createEventDispatcher()
 
-    let r;
-    onMount(() => {
-        r = document.querySelector(':root');
-        if(localStorage.getItem("themeID") != null) {
-            themeID = parseInt(localStorage.getItem("themeID"));
-        } else {
-            themeID = 0;
-        }
-        updateStyle();
-    });
-    const updateStyle = () => {
-        r.style.setProperty('--theme', themes[themeID]);
-        localStorage.setItem("themeID", String(themeID));
-        switch (themeID) {
-            case 0:
-                div.style.backgroundImage = "url(/BgImage1.jpg)";
-                p.innerText = "Speik Steiermark";
-                break;
-            case 1:
-                div.style.backgroundImage = "url(/BgImage2.jpg)";
-                p.innerText = "Kitzbühl Panoramaalm";
-                break;
-            case 2:
-                div.style.backgroundImage = "url(/BgImage3.jpg)";
-                p.innerText = "Mein Daumen";
-                break;
-            case 3:
-                div.style.backgroundImage = "url(/BgImage4.jpg)";
-                p.innerText = "Picture from Internet";
-                break;
-        }
-    }
+    export let navIndex = 0;
+    export let themeID = 0;
+    export let updateStyle = () => {}
+    export let themes: string[];
+
+
+
 </script>
 
 <style lang="scss">
