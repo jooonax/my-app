@@ -23,6 +23,7 @@
         } else {
             themeID = 0;
         }
+        updateStyle();
     });
     const updateStyle = () => {
         console.log("hhhh");
