@@ -70,6 +70,8 @@
 <section>
     {#if pageId == 0}
         <Home/>
+    {:else}
+        <a href="../app.html">Test</a>
     {/if}
 </section>
 
