@@ -8,7 +8,6 @@
     export const prerender = true;
     let div;
     let p;
-    let pageId = 0;
 
 
     let navIndex = 0;
@@ -63,15 +62,13 @@
 
 </style>
 
-<Navbar bind:themeID={themeID} navIndex="{navIndex}" updateStyle={updateStyle} themes="{themes}"/>
+<Navbar bind:themeID={themeID} bind:navIndex="{navIndex}" updateStyle={updateStyle} themes="{themes}"/>
 
 <Header bind:div={div} bind:p={p}/>
 
 <section>
-    {#if pageId == 0}
+    {#if navIndex === 0}
         <Home/>
-    {:else}
-        <a href="../app.html">Test</a>
     {/if}
 </section>
 
