@@ -8,9 +8,9 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
-		// default options are shown
 		adapter: adapter()
 	}
+
 };
 
 export default config;
