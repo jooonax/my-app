@@ -1,5 +1,6 @@
 <script lang="ts">
   import Timeline from "./AboutAssets/Timeline.svelte";
+  import ProgressBar from "./AboutAssets/ProgressBar.svelte";
 </script>
 
 <style lang="scss">
@@ -91,5 +92,6 @@
       <Timeline/>
     </article>
   </section>
+  <ProgressBar></ProgressBar>
 </article>
 
