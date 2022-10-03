@@ -1,5 +1,11 @@
 <script lang="ts">
-    export let progress;
+    import {onMount} from "svelte";
+
+    export let bars = [{
+        title:"Test",
+        deg:200
+    }];
+
 </script>
 
 <style lang="scss">
@@ -14,18 +20,21 @@
 
   .dashboard {
     display: flex;
+    align-items: center;
+    background-color: colors.$dark;
   }
 
   svg {
     width: 114px;
-    height: 114px;
+    height: 174px;
     margin: 1em;
   }
+
 
   .bg {
     fill: none;
     stroke-width: 10px;
-    stroke: #1A2C34;
+    stroke: colors.$grey;
   }
 
   [class^="meter"] {
@@ -44,20 +53,23 @@
     animation: progress 1s ease-out;
   }
 
-  @keyframes progress {
+  /*@keyframes progress {
     from {
       stroke-dashoffset: 360;
     }
     to {
       stroke-dashoffset: 100;
     }
-  }
+  }*/
 
 </style>
 
 <div class="dashboard">
-    <svg>
-        <circle class="bg" cx="57" cy="57" r="52" />
-        <circle class="meter" cx="57" cy="57" r="52" />
-    </svg>
+    {#each bars as bar, i}
+        <svg>
+            <text x="15" y="17" fill="white">{bar.title}</text>
+            <circle class="bg" cx="57" cy="87" r="52" />
+            <circle class="meter" style="stroke-dashoffset: {bar.deg}" cx="57" cy="87" r="52" />
+        </svg>
+    {/each}
 </div>
