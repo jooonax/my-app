@@ -1,16 +1,18 @@
 <script lang="ts">
   import Timeline from "./AboutAssets/Timeline.svelte";
   import ProgressBar from "./AboutAssets/ProgressBar.svelte";
-
   const bars = [{
-      title: "js",
-      deg: 150
+      title: "Programming",
+      deg: 100
     }, {
-      title: "css",
-      deg: 150
+      title: "Football",
+      deg: 110
     }, {
-      title: "html",
-      deg: 150
+      title: "English",
+      deg: 160
+    }, {
+      title: "Spanish",
+      deg: 330
     }
   ]
 </script>
@@ -104,6 +106,8 @@
       <Timeline/>
     </article>
   </section>
-  <ProgressBar bars="{bars}"></ProgressBar>
+
+  <h1>My Skills</h1>
+  <ProgressBar bars="{bars}"/>
 </article>
 

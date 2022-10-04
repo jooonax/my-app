@@ -20,7 +20,7 @@
 
   .dashboard {
     display: flex;
-    align-items: center;
+    justify-content: center;
     background-color: colors.$dark;
   }
 
@@ -52,7 +52,12 @@
     stroke: colors.$theme;
     animation: progress 1s ease-out;
   }
-
+  @media (max-width: 700px) {
+    .dashboard {
+      display: block;
+      background-color: colors.$dark;
+    }
+  }
   /*@keyframes progress {
     from {
       stroke-dashoffset: 360;
@@ -67,7 +72,7 @@
 <div class="dashboard">
     {#each bars as bar, i}
         <svg>
-            <text x="15" y="17" fill="white">{bar.title}</text>
+            <text x="5" y="17" fill="white">{bar.title}</text>
             <circle class="bg" cx="57" cy="87" r="52" />
             <circle class="meter" style="stroke-dashoffset: {bar.deg}" cx="57" cy="87" r="52" />
         </svg>
