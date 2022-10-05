@@ -21,7 +21,7 @@
   .dashboard {
     display: flex;
     justify-content: center;
-    background-color: colors.$dark;
+    background-color: colors.$grey;
   }
 
   svg {
@@ -34,7 +34,7 @@
   .bg {
     fill: none;
     stroke-width: 10px;
-    stroke: colors.$grey;
+    stroke: colors.$dark;
   }
 
   [class^="meter"] {

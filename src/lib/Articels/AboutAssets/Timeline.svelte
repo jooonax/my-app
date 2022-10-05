@@ -27,6 +27,7 @@
   /* Card container */
   .card {
     position: relative;
+    z-index: 0;
   }
 
   /* setting padding based on even or odd */

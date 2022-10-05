@@ -27,8 +27,8 @@
   article {
     float: left;
     padding-top: 20px;
-    padding-bottom: 20px;
     background-color: colors.$light;
+    padding-bottom: 0px;
   }
   article>* {
     margin-right: 25%;
@@ -85,7 +85,6 @@
     display: table;
     clear: both;
   }
-
 </style>
 
 <article>
