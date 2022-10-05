@@ -55,7 +55,6 @@
   @media (max-width: 700px) {
     .dashboard {
       display: block;
-      background-color: colors.$dark;
     }
   }
   /*@keyframes progress {

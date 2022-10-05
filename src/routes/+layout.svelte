@@ -69,6 +69,10 @@
 <section>
     {#if navIndex === 0}
         <Home/>
+    {:else if navIndex === 1}
+        <p style="height: 10000px;text-align: center">VOID</p>
+    {:else }
+        <p style="height: 10000px;background-color: black;text-align: center;margin: 0px;color: white; padding: 8px">SPACE</p>
     {/if}
 </section>
 
