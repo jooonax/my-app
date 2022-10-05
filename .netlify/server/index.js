@@ -314,6 +314,7 @@ async function render_endpoint(event, mod, state) {
       );
     }
     if (state.prerendering) {
+      response.headers.set("x-sveltekit-routeid", event.routeId);
       response.headers.set("x-sveltekit-prerender", String(prerender));
     }
     return response;
@@ -1271,8 +1272,7 @@ async function render_response({
       routeId: event.routeId,
       status,
       url: event.url,
-      data,
-      form: form_value
+      data
     };
     const print_error = (property, replacement) => {
       Object.defineProperty(props.page, property, {
@@ -2068,9 +2068,6 @@ async function respond(request, options, state) {
           }
         }
         add_cookies_to_headers(response2.headers, Array.from(new_cookies.values()));
-        if (state.prerendering && event2.routeId !== null) {
-          response2.headers.set("x-sveltekit-routeid", event2.routeId);
-        }
         return response2;
       }),
       get request() {
@@ -2108,7 +2105,7 @@ function set_paths(paths) {
   base = paths.base;
   assets = paths.assets || base;
 }
-const app_template = ({ head, body, assets: assets2, nonce }) => '<!DOCTYPE html>\n<html lang="en">\n	<head>\n		<title>Svelte</title>\n		<meta charset="utf-8" />\n		<link rel="icon" href="' + assets2 + '/favicon.png" />\n		<meta name="viewport" content="width=device-width" />\n		' + head + "\n		<style>\n			body {\n				margin: 0px;\n				font-family: Arial, Helvetica, sans-serif;\n			}\n		</style>\n	</head>\n	<body>\n		<div>" + body + "</div>\n	</body>\n</html>\n";
+const app_template = ({ head, body, assets: assets2, nonce }) => '<!DOCTYPE html>\n<html lang="en">\n	<head>\n		<title>Svelte</title>\n		<meta charset="utf-8" />\n		<link rel="icon" href="' + assets2 + '/favicon.png" />\n		<meta name="viewport" content="width=device-width" />\n		' + head + "\n		<style>\n			body {\n				margin: 0px;\n				background-color: #333334;\n				font-family: Arial, Helvetica, sans-serif;\n			}\n		</style>\n	</head>\n	<body>\n		<div>" + body + "</div>\n	</body>\n</html>\n";
 const error_template = ({ status, message }) => '<!DOCTYPE html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<title>' + message + `</title>
 
 		<style>

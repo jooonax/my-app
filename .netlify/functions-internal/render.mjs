@@ -2,10 +2,10 @@ import { init } from '../serverless.js';
 
 export const handler = init({
 	appDir: "_app",
-	assets: new Set(["BgImage1.jpg","BgImage2.jpg","BgImage3.jpg","favicon.png","Me.jpg"]),
+	assets: new Set(["BgImage1.jpg","BgImage2.jpg","BgImage3.jpg","BgImage4.jpg","favicon.png","Me.jpg"]),
 	mimeTypes: {".jpg":"image/jpeg",".png":"image/png"},
 	_: {
-		entry: {"file":"_app/immutable/start-83bbcce4.js","imports":["_app/immutable/start-83bbcce4.js","_app/immutable/chunks/index-b519d647.js","_app/immutable/chunks/singletons-1e5b8e24.js"],"stylesheets":[]},
+		entry: {"file":"_app/immutable/start-2ae0dff4.js","imports":["_app/immutable/start-2ae0dff4.js","_app/immutable/chunks/index-fbcad342.js","_app/immutable/chunks/singletons-608dcd46.js"],"stylesheets":[]},
 		nodes: [
 			() => import('../server/nodes/0.js'),
 			() => import('../server/nodes/1.js'),

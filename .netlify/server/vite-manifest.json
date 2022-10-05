@@ -19,7 +19,7 @@
       "src/routes/+page.svelte"
     ],
     "css": [
-      "_app/immutable/assets/_layout-ef914c96.css"
+      "_app/immutable/assets/_layout-c687718f.css"
     ]
   },
   "src/routes/+page.svelte": {
@@ -30,7 +30,7 @@
       "_index.js"
     ],
     "css": [
-      "_app/immutable/assets/_page-65f2c787.css"
+      "_app/immutable/assets/_page-98efcdad.css"
     ]
   },
   "node_modules/@sveltejs/kit/src/runtime/components/error.svelte": {
