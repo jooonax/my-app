@@ -72,7 +72,7 @@
 <nav>
     <ul>
         <li><p on:click={() => {navIndex = 0;}}>Home</p></li>
-        <li><p on:click={() => {navIndex = 1;}}>Void</p></li>
+        <li><p on:click={() => {navIndex = 1;}}>Impressum</p></li>
         <li><p on:click={() => {navIndex = 2;}}>Space</p></li>
 
         <li style="float: right;">

@@ -3,6 +3,7 @@
     import Header from "../lib/Header.svelte";
     import Navbar from "../lib/Navbar.svelte";
     import Footer from "../lib/Footer.svelte";
+    import Impressum from "../lib/Impressum.svelte";
     import {onMount} from "svelte";
 
     export const prerender = true;
@@ -70,7 +71,7 @@
     {#if navIndex === 0}
         <Home/>
     {:else if navIndex === 1}
-        <p style="height: 10000px;text-align: center">VOID</p>
+        <Impressum/>
     {:else }
         <p style="height: 10000px;background-color: black;text-align: center;margin: 0px;color: white; padding: 8px">SPACE</p>
     {/if}
